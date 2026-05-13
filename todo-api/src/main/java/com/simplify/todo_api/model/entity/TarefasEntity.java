@@ -1,5 +1,6 @@
 package com.simplify.todo_api.model.entity;
 
+import com.simplify.todo_api.enums.PrioridadeTarefa;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,7 +20,13 @@ public class TarefasEntity {
     private Long id;
 
     @Column(nullable = false)
+    private String nome;
+
+    @Column(nullable = false)
     private String descricao;
+
+    @Column(nullable = false)
+    private Boolean realizado;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

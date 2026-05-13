@@ -1,12 +1,17 @@
 package com.simplify.todo_api.dto;
 
-import lombok.*;
+import com.simplify.todo_api.enums.PrioridadeTarefa;
+import jakarta.validation.constraints.NotBlank;
 
-@Getter
-@Setter
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
-public class TarefasDto {
-    private String descricao;
+public record TarefasDto(
+
+        @NotBlank
+        String nome,
+        @NotBlank
+        String descricao,
+        @NotBlank
+        Boolean realizado,
+        @NotBlank
+        PrioridadeTarefa prioridade
+        ) {
 }
